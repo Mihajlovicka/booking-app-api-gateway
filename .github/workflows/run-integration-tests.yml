@@ -41,7 +41,7 @@ jobs:
 
       - name: Build and run tests with Docker Compose
         run: |
-          docker-compose -f docker-compose.yml up || exit 1
+          docker-compose -f docker-compose.yml up --exit-code-from auth_service
 
       - name: Clean up Docker images
         run: |
